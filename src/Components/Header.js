@@ -86,7 +86,7 @@ const Chairs = [chair1, chair2, chair3, chair4, chair5, chair6, chair7,img, img2
 
   return (
     <>
-      <div>
+      <div className="container">
         <div className="logo">
           <img src={image} alt="logo" />
         </div>
@@ -132,6 +132,9 @@ const Chairs = [chair1, chair2, chair3, chair4, chair5, chair6, chair7,img, img2
                 {/* <span className="arrow">→➜</span> */}
                 <span className="arrow">➜</span>
               </button>
+              {/* <button className="shop-now-button">
+                <a href="/OurProducts">Shop Now →</a>
+              </button> */}
             </div>
           </div>
         </div>
@@ -146,11 +149,11 @@ const Chairs = [chair1, chair2, chair3, chair4, chair5, chair6, chair7,img, img2
 
         <div class="line-text">
           <h1 className="text">WE ARE</h1>
-          <div class="line"></div>
+          <div className="line"></div>
           <img src={image} alt="Mayur Logo" />
         </div>
 
-        <div class="content-container">
+        <div className="content-container">
           <img src={MayurShop} alt="Shop" className="shop" />
           <p>
             Where does it come from? Contrary to popular belief, Lorem Ipsum is
@@ -167,8 +170,8 @@ const Chairs = [chair1, chair2, chair3, chair4, chair5, chair6, chair7,img, img2
           </p>
         </div>
 
-        <div class="line-text2">
-          <div class="line"></div>
+        <div className="line-text2">
+          <div className="line"></div>
           <h3 className="text2">Meet Our CEO's</h3>
           <img src={CEO1} alt="cEO photo" className="pic" />
           <img src={CEO2} alt="cEO photo" className="pic" />
@@ -219,8 +222,18 @@ const Chairs = [chair1, chair2, chair3, chair4, chair5, chair6, chair7,img, img2
 
           <div className="carousel flex items-center gap-4 p-4">
             {/* Previous Button */}
-            <button
+            {/* <button
               className="carousel-btn p-3 bg-blue-500 text-white rounded-full hover:bg-blue-700 transition"
+              onClick={handlePrev}
+            >
+              ←
+            </button> */}
+
+            <button
+              disabled={startIndex === 0}
+              className={`carousel-btn ${
+                startIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
+              }`}
               onClick={handlePrev}
             >
               ←
@@ -243,19 +256,18 @@ const Chairs = [chair1, chair2, chair3, chair4, chair5, chair6, chair7,img, img2
 
             {/* Next Button */}
             <button
-              className="carousel-btn p-3 bg-blue-500 text-white rounded-full hover:bg-blue-700 transition"
+              disabled={startIndex >= Chairs.length - visibleImages}
+              className={`carousel-btn ${
+                startIndex >= Chairs.length - visibleImages
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
+              }`}
               onClick={handleNext}
             >
               →
             </button>
           </div>
         </div>
-
-
-
-
-
-
 
         <div className="explore-more-container">
           <img
@@ -272,12 +284,6 @@ const Chairs = [chair1, chair2, chair3, chair4, chair5, chair6, chair7,img, img2
             </button>
           </div>
         </div>
-
-
-
-
-
-        
 
         <div className="container">
           {/* Top Section */}

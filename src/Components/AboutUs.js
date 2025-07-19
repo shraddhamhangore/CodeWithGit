@@ -35,7 +35,7 @@ function AboutUs() {
         >
           <h1 className="about-title">About Us</h1>
           <p className="about-text">
-            Welcome to <strong>Mayur Furniture & electronics</strong>, your
+            Welcome to <strong>Mayur Furniture & Electronics</strong>, your
             trusted destination for premium furniture and home décor solutions
             in Kamti, Solapur. We are committed to offering high-quality,
             stylish, and durable furniture that enhances your living and working
